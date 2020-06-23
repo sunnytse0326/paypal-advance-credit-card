@@ -1,0 +1,107 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+  <div class="loader-lty" id="loader" >
+    <div class="loader" ></div>
+  </div>
+
+  <div id="spb-ucc" style="display: none;" >
+    <table border="0" align="center" valign="top" bgcolor="#FFFFFF" style="width:39%;">
+      <tr>
+        <td colspan="2">
+          <div id="paypal-button-container"></div>
+        </td>
+      </tr>
+      <tr><td colspan="2">&nbsp;</td></tr>
+    </table>
+  </div>
+
+  <div id="paypal-button-container"></div>
+
+   <script>
+     fetch("/data-client", {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        }
+    }).then(function (data) {
+        return data.json();
+    }).then(function (result) {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = "https://www.paypal.com/sdk/js?client-id=ASKhDJR9NDAzcijJBPpPd3_5Q1xjrZxIaOblcizwvLu862d1MS9rzcyelzS3tOrod7kg1h4DbmAedzhr&commit=true&components=buttons,hosted-fields&debug=false&currency=USD&intent=capture&merchant-id=VSGL57QRJ6EVQ&locale=en_US&buyer-country=US";
+        script.setAttribute("data-client-token", result.client_token);
+        script.setAttribute("id", "ppscript");
+        script.onload = function() { 
+            document.getElementById("spb-ucc").style.display = "block";
+            document.getElementById("loader").style.display = "none";
+
+            paypal.Buttons({
+              commit: false,
+              createOrder: function(data, actions) {
+                  return actions.order.create({
+                    intent: "CAPTURE",
+                    payer: {
+                        name: {
+                            given_name: "Tse",
+                            surname: "Sunny"
+                        },
+                        address: {
+                            address_line_1: '123 ABC Street',
+                            address_line_2: 'Apt 2',
+                            admin_area_2: 'San Jose',
+                            admin_area_1: 'CA',
+                            postal_code: '95131',
+                            country_code: 'US'
+                        },
+                        email_address: "customer@domain.com",
+                        phone: {
+                            phone_type: "MOBILE",
+                            phone_number: {
+                                national_number: "11231242343"
+                            }
+                        }
+                    },
+                    purchase_units: [
+                        {
+                            amount: {
+                                value: '12.34',
+                                currency_code: 'USD'
+                            }
+                        }
+                    ],
+                    application_context : { 
+                        shipping_preference:"NO_SHIPPING"
+                    }
+                  });
+                },
+              onCancel: function (data) {
+                },
+              onApprove: function(data, actions) {
+                return fetch('/order-capture', {
+                                method: 'post',
+                                headers: {
+                                    'content-type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    orderId: data.orderID
+                                })
+                            }).then(function (data) {
+                                return data.json();
+                            }).then(function (json) {
+                                alert(`Payment (OrderID: ${data.orderID}) is completed!`)
+                            });
+              }
+            }).render('#paypal-button-container');
+         };
+        head.appendChild(script);
+    });
+   </script>
+   </body>
+   </html>
