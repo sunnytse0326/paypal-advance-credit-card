@@ -1,9 +1,9 @@
 # PayPal Advance Credit Card Payments
 
-:point_right: [English](README.md)
+:point_right: [English](README.md)<br>
 :point_right: [简体中文](readme/README-zh_cn.md)
 
-Advance Card Solution helps to create a customized checkout experience by adding card fields that align with your brand. This repository demonstrates the example of how to implement the solution by PayPal latest [Restful API](https://developer.paypal.com/docs/api/overview/). You can also take the referene from this [guideline](docs/paypal-advance-card-payment-en).
+Advance Card Solution helps to create a customized checkout experience by adding card fields that align with your brand. This repository demonstrates the example of how to implement the solution by PayPal latest [Restful API](https://developer.paypal.com/docs/api/overview/). You can also take the referene from this [guideline](docs/paypal-advance-card-payment-en.pdf).
 
 ## Integration 
 Generally, it takes 4 steps to implement card payment solution:
