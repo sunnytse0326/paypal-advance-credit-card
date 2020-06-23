@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/avatar-bot-cli.svg)](https://badge.fury.io/js/paypal-acc-vault)
 ![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
+![Test passing](https://img.shields.io/badge/Tests-passing-brightgreen.svg)
 
 :point_right: [English](README.md)<br>
 :point_right: [简体中文](readme/README-zh_cn.md)
@@ -28,4 +29,4 @@ Generally, it takes 4 steps to implement card payment solution:
 
 
 ### Contribution
-We are welcome anyone to folk this repository and make PR to contribute this example project by creating test cases or code changes. :).
+We are welcome anyone to folk this repository and make PR to contribute this example project by creating test cases or code changes. :smile:
