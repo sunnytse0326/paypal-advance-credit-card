@@ -29,4 +29,4 @@ Generally, it takes 4 steps to implement card payment solution:
 
 
 ### Contribution
-We are welcome anyone to folk this repository and make PR to contribute this example project by creating test cases or code changes. :smile:
+We are welcome anyone to folk this repository and make PR to contribute this example project by creating test cases or code changes :smile:.
