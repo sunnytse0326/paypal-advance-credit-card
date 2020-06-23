@@ -1,5 +1,8 @@
 # PayPal Advance Credit Card Payments
 
+[![npm version](https://badge.fury.io/js/avatar-bot-cli.svg)](https://badge.fury.io/js/paypal-acc-vault)
+![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
+
 :point_right: [English](README.md)<br>
 :point_right: [简体中文](readme/README-zh_cn.md)
 
@@ -24,3 +27,5 @@ Generally, it takes 4 steps to implement card payment solution:
  After the project is compiled, please access to [http://localhost:3000/ucc-form](http://localhost:3000/ucc-form) to try the example.
 
 
+### Contribution
+We are welcome anyone to folk this repository and make PR to contribute this example project by creating test cases or code changes. :).
