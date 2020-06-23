@@ -12,10 +12,10 @@
 
 ## 集成方案
 我们会透过4个主要步骤去集成整个信用卡支付方案：
-1.由[Restful API](https://developer.paypal.com/docs/business/get-started/#exchange-your-api-credentials-for-an-access-token)去获取API访问令牌。
-2.从[生成令牌API](https://developer.paypal.com/docs/business/checkout/advanced-card-payments/#step-2-generate-a-client-token-for-yourbuyer)中获取```data_client_token```。
-3.将卡片表格添加到结帐付款页面
-4.通过[Capture API](https://developer.paypal.com/docs/api/orders/v2/#orders_capture)从服务器端调用中捕获付款订单。
+1. 由[Restful API](https://developer.paypal.com/docs/business/get-started/#exchange-your-api-credentials-for-an-access-token)去获取API访问令牌。
+2. 从[生成令牌API](https://developer.paypal.com/docs/business/checkout/advanced-card-payments/#step-2-generate-a-client-token-for-yourbuyer)中获取```data_client_token```。
+3. 将卡片表格添加到结帐付款页面
+4. 通过[Capture API](https://developer.paypal.com/docs/api/orders/v2/#orders_capture)从服务器端调用中捕获付款订单。
 
 ### 安装
 ```sh
